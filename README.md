@@ -1,126 +1,53 @@
+# Mini_Project_MENU
+Built as a mini-project to practice switch-case, loops, and basic billing logic in C.
 
-#include <stdio.h>
+# BUNK CAFE – Restaurant Billing System
+A simple command-line cafe ordering and billing application written in C.
 
-int main()
-{
-    printf("-------->WELCOME TO EGGPLOSION CAFE<-------\n\n\n");
-    printf("====SIGNATURE MENU====\n\n");
-    printf(" 1.EGG FRIES    180rs \n 2.EGG BURGIE    90rs \n 3.EGG MASALA    90rs \n 4.EGG PIZZA    250rs \n 5.EGG BURGER    320rs \n 6.JUST ENQUIRY  \n \n\n");
+## Features
+- Interactive menu card with 4 items and their rates
+- Order multiple items in a single session (repeat selection in a loop)
+- Automatically tracks quantity ordered per item
+- Live cart preview shown after every item added
+- Checkout screen displaying a summary of all items ordered
+- Generates an itemized bill at payment
+- Calculates GST (18%) and final grand total
 
-    int order;
-    int od1=0,od2=0,od3=0,od4=0,od5=0,od6=0;
-    int quantity =1;
-    printf("GRAB IT YOUR ORDER \n \n ");
-     do
-     {
-        printf("enter your orders : \n" );
-        scanf("%d",&order);
-       switch(order)
-          {
-            case 1:
-            printf("EGG FRIES    180rs \n");
-            printf("quantity :");
-            scanf("%d",&od1);
-            break;
-            case 2:
-            printf("EGG BURGIE    90rs \n");
-            printf("quantity :");
-            scanf("%d",&od2);
-            break;
-            case 3:
-            printf("EGG MASALA    90rs \n");
-            printf("quantity :");
-            scanf("%d",&od3);
-            break;
-            case 4:
-            printf("EGG PIZZA    250rs \n");
-            printf("quantity :");
-            scanf("%d",&od4);
-            break;
-            case 5:
-            printf("EGG BURGER    250rs \n");
-            printf("quantity :");
-            scanf("%d",&od5);
-            break;
-            case 6:
-            printf("CONFRIM \n\n");
-            break;
-            case 7:
-            printf("JUST ENQUIRY \n");
-            break;
-            default:
-            printf("OPPS! dont order anything \n");
+## How it works
+1. The program displays the **BUNK CAFE** menu card with 4 items and prices:
+   - Coffee – 120
+   - Matcha – 180
+   - Pastries – 150
+   - Cheese Cake – 180
+2. The user selects an item number (1–4) to add it to the cart; each selection increases that item's quantity by 1.
+3. After every selection, the program prints the current cart so the user can track their order.
+4. The user can keep selecting items (1–4), or choose:
+   - `5` – Checkout, which shows a summary of the cart and asks to proceed to payment (`1`)
+   - `6` – Exit
+5. Once checkout is confirmed with `1`, the program prints:
+   - A breakdown of all items ordered with quantity and rate
+   - Total, GST (18%), and Grand Total
 
-          }
-          if(order<=5)
-          {
-              if(order ==1)
-              {
-               printf(" %dEGG FIRES    180rs add to cart \n",od1);
-              }
-              else if(order==2)
-              {
-               printf("%dEGG BURGIE    90rs  add to cart\n",od2);
-              }
-              else if(order==3)
-              {
-               printf("%dEGG MASALA    90rs add to cart \n",od3);
-              }
-              else if(order==4)
-              {
-               printf("%d EGG PIZZA    250rs  add to cart\n",od4);
-              }
-              else if(order==5)
-              {
-               printf("%dEGG BURGER    250rs  add to cart\n",od5);
-              }
-          }
-          else if(order==6)
-          {
-            printf("%d EGG FIRES    180rs\n",(od1*quantity));
-            printf("%d EGG BURGIE    90rs \n",(od2*quantity));
-            printf("%d EGG MASALA    90rs \n",od3*quantity);
-            printf("%d EGG PIZZA    250rs \n",od4*quantity);
-            printf("%d EGG BURGER   250rs \n",od5*quantity);
-          }
-          else
-          {
-            printf("sorry");
-          }
-      } while(order <=5 && order >0);
-      printf("\n\n");
-      printf("YOUR ORDER :     RATE    QNT\n");
-      printf("-----------      -----   ---    \n\n");
-      if(od1>0)
-      {
-        printf("EGG FIRES        180rs    %d  \n",(od1*quantity));
-      }
-      if(od2>0)
-      {
-       printf("EGG BURGIE        90rs    %d  \n",(od2*quantity));
-      }
-      if(od3>0)
-      {
-       printf("EGG MASALA        90rs    %d  \n",od3*quantity);
-      }
-      if(od4>0)
-      {
-       printf("EGG PIZZA        250rs    %d  \n",od4*quantity);
-      }
-      if(od5>0)
-      {
-       printf("EGG BURGER       250rs    %d  \n",od5*quantity);
-      }
-      printf("______________________________\n");
+## Sample Run
+Ordering coffee and building the cart:
 
-      float sum=od1*180+od2*90+od3*90+od4*250+od5*250;
-      float GsT;
-      printf("TOTAL                  %g rs\n",sum);
-      printf("GsT                    %g rs\n",sum*18/100);
-      printf("-----------------------------\n");
-     
-      printf("GRAND TOTAL            %g rs\n",sum*18/100+sum);
-      printf("-----THANK YOU VISIT AGAIN------\n");
+<img width="418" height="497" alt="image"   src="https://github.com/user-attachments/assets/80fa2fe8-eb2a-4ccd-a9cf-6face8ca1a10" />
+Checkout and final bill with GST:
 
-      return 0;
-}
+<img width="382" height="499" alt="image" src="https://github.com/user-attachments/assets/6d05a7ec-8721-4608-932e-3d364ec8c87d" />
+
+## Concepts used
+- `switch` statements for menu selection
+- `do-while` loop for repeated ordering
+- Basic billing/tax computation
+
+## How to compile and run
+```bash
+gcc Bunk_cafe.c -o bunk_cafe
+./bunk_cafe
+```
+
+
+
+
+
