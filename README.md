@@ -17,11 +17,11 @@ A simple command-line cafe ordering and billing application written in C.
 1. The program displays the **BUNK CAFE** menu card with 4 items and prices:
    - ====SIGNATURE MENU====
 
-    1.EGG FRIES    180rs 
-    2.EGG BURGIE    90rs 
-    3.EGG MASALA    90rs 
-    4.EGG PIZZA    250rs 
-    5.EGG BURGER    320rs 
+    -1.EGG FRIES    180rs 
+    -2.EGG BURGIE    90rs 
+    -3.EGG MASALA    90rs 
+    -4.EGG PIZZA    250rs 
+    -5.EGG BURGER    320rs 
    
    
 3. The user selects an item number (1–4) to add it to the cart; each selection increases that item's quantity by 1.
@@ -34,7 +34,7 @@ A simple command-line cafe ordering and billing application written in C.
    - Total, GST (18%), and Grand Total
 
 ## Sample Run
-Ordering coffee and building the cart:
+Ordering food and building the cart:
 <img width="1133" height="235" alt="Screenshot 2026-08-01 at 11 48 34 AM" src="https://github.com/user-attachments/assets/c8ab866c-3738-40c5-8644-e9f3a4307cdb" />
 
 Checkout and final bill with GST:
